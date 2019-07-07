@@ -1,4 +1,4 @@
-clients = 'Cuau, Ricardo, '
+clients = 'Cuau, Ricardo, Pepe'
 
 def create_client(client_name):
 	global clients
@@ -12,7 +12,6 @@ def create_client(client_name):
 
 def list_clients():
 	global clients
-
 	print(clients)
 
 def update_client(client_name, update_client_name):
