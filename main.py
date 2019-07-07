@@ -1,4 +1,4 @@
-clients = 'Cuau, Ricardo, Pepe'
+clients = 'Cuau, Ricardo, Pepe, Alit'
 
 def create_client(client_name):
 	global clients
