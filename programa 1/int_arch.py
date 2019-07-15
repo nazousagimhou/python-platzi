@@ -1,4 +1,4 @@
-help()
+#help()
 # Tutorial de python -> https://docs.python.org/3.6/tutorial/
 
 #country = 'Colombia'
@@ -12,3 +12,7 @@ help()
 #print(len(country))
 #print(id(fourth_letter))
 #print(id(other_letter))
+
+pal = 'Anita lava la tina'
+print(pal[::-1])
+print(pal[8:])
