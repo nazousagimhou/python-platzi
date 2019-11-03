@@ -52,7 +52,6 @@ def update_client(client_name, update_client):
 
 def delete_client(client_id):
 	global clients
-
 	clients_lenght = len(clients)
 
 	if client_id <= clients_lenght and client_id >= 0:
@@ -66,7 +65,6 @@ def search_client(client_name):
 			continue
 		else:
 			return True
-
 
 def _get_client_field(field_name):
 	field = None
@@ -91,6 +89,15 @@ def _get_client_name():
 
 	return client_name
 
+def _get_client_from_user():
+	client = {
+			 'name': _get_client_field('name'),
+			 'company': _get_client_field('company'),
+			 'email': _get_client_field('email'),
+			 'position': _get_client_field('position'),
+		}
+	return client
+	
 
 def _print_welcome():
 	print('WELCOME TO PLATZI')
@@ -110,12 +117,8 @@ if __name__ == '__main__':
 	command = command.upper()
 
 	if command == 'C':
-		client = {
-			 'name': _get_client_field('name'),
-			 'company': _get_client_field('company'),
-			 'email': _get_client_field('email'),
-			 'position': _get_client_field('position'),
-		}		
+		client = _get_client_from_user()
+
 		create_client(client)
 		list_clients()
 	elif command == 'L':
@@ -135,12 +138,7 @@ if __name__ == '__main__':
 		found = search_client(client_name)
 
 		if found:
-			updated_client = {
-				 'name': _get_client_field('name'),
-				 'company': _get_client_field('company'),
-				 'email': _get_client_field('email'),
-				 'position': _get_client_field('position'),
-			}		
+			updated_client = _get_client_from_user()
 		
 			update_client(client_name, updated_client)
 			list_clients()	
