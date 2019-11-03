@@ -50,11 +50,13 @@ def update_client(client_name, update_client):
 	if not isClientFound:
 		print('Client is not in clients\'s list ')
 
-def delete_client(client_name):
+def delete_client(client_id):
 	global clients
 
-	if client_name in clients:
-		clients.remove(client_name)
+	clients_lenght = len(clients)
+
+	if client_id <= clients_lenght and client_id >= 0:
+		del clients[client_id]
 	else:
 		print('Client is not in clients\'s list')
 
@@ -65,11 +67,6 @@ def search_client(client_name):
 		else:
 			return True
 
-#def _add_coma():
-#	global clients
-
-#	clients +=','	
-#Funcion de ayuda o privada para poner la coma
 
 def _get_client_field(field_name):
 	field = None
@@ -151,8 +148,9 @@ if __name__ == '__main__':
 			print('The client: {} is not in the Client\'s list'.format(client_name))
 
 	elif command == 'D':
-		client_name = _get_client_name()
-		delete_client(client_name)
+		client_id = int(_get_client_field('id'))
+
+		delete_client(client_id)
 		list_clients()
 	else:
 		print('Invalid command')
