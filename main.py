@@ -54,7 +54,7 @@ def delete_client(client_name):
 
 def search_client(client_name):
 	for client in clients:
-		if client != client_name:
+		if client['name'] != client_name:
 			continue
 		else:
 			return True
@@ -118,7 +118,8 @@ if __name__ == '__main__':
 	elif command == 'L':
 		list_clients()
 	elif command == 'S':
-		client_name = _get_client_name()
+		client_name = _get_client_field('name')
+		print('Name to be searched: {}'.format(client_name))
 		found = search_client(client_name)
 
 		if found:
