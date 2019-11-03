@@ -35,13 +35,19 @@ def list_clients():
 			email = client['email'],
 			position = client['position']))
 
-def update_client(client_name, update_name):
+def update_client(client_name, update_client):
 	global clients
+	isClientFound = False
+	
+	for client in clients:
+		if client['name'] == client_name:
+			client['name'] = update_client['name']
+			client['company'] = update_client['company']
+			client['email'] = update_client['email']
+			client['position'] = update_client['position']
+			isClientFound = True	
 
-	if client_name in clients:
-		index = clients.index(client_name)
-		clients[index] = update_name 
-	else: 
+	if not isClientFound:
 		print('Client is not in clients\'s list ')
 
 def delete_client(client_name):
@@ -128,22 +134,25 @@ if __name__ == '__main__':
 			print('The client: {} is not in the Client\'s list'.format(client_name))
 
 	elif command == 'U':
-		client_name = _get_client_name()
-		update_client_name = input('What is the updated client name? ')
+		client_name = _get_client_field('name')
+		found = search_client(client_name)
+
+		if found:
+			updated_client = {
+				 'name': _get_client_field('name'),
+				 'company': _get_client_field('company'),
+				 'email': _get_client_field('email'),
+				 'position': _get_client_field('position'),
+			}		
 		
-		update_client(client_name, update_client_name)
-		list_clients()	
+			update_client(client_name, updated_client)
+			list_clients()	
+		else:
+			print('The client: {} is not in the Client\'s list'.format(client_name))
+
 	elif command == 'D':
 		client_name = _get_client_name()
 		delete_client(client_name)
 		list_clients()
-	elif command == 'S':
-		client_name = _get_client_name()
-		found = search_client(client_name)
-		
-		if found:
-			print('The client is in the clients\'s list')
-		else:
-			print('The client: {} is not in our clients\'s list'.format(client_name))
 	else:
 		print('Invalid command')
