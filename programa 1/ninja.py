@@ -9,12 +9,15 @@
 #print (cerradura(8,5))
 #print (type(cerradura))
 
-x = 1
-y = 3
-a = 5
-b = 7
+#x = 1
+#y = 3
+#a = 5
+#b = 7
 
-if x >= y :
-	print('x es menor que y')
-else :
-	print('x no es menor que y')
+#if x >= y :
+#	print('x es menor que y')
+#else :
+#	print('x no es menor que y')
+
+
+10//4
