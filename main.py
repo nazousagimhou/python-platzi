@@ -117,6 +117,15 @@ if __name__ == '__main__':
 		list_clients()
 	elif command == 'L':
 		list_clients()
+	elif command == 'S':
+		client_name = _get_client_name()
+		found = search_client(client_name)
+
+		if found:
+			print('The client is in the Client\'s list')
+		else:
+			print('The client: {} is not in the Client\'s list'.format(client_name))
+
 	elif command == 'U':
 		client_name = _get_client_name()
 		update_client_name = input('What is the updated client name? ')
