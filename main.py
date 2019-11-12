@@ -2,7 +2,7 @@ import sys
 import csv
 import os
 
-CLIENT_TABLE = '.clients.csv'
+CLIENT_TABLE = 'clients.csv'
 CLIENT_SCHEMA = ['name', 'company', 'email', 'position']
 clients = []
 # Estuctura de diccionario para guardar los datos de los clientes
@@ -17,7 +17,7 @@ def _initialize_clients_from_storage():
 def _save_clients_to_storage():
     tmp_table_name = '{}.tmp'.format(CLIENT_TABLE)
     with open(tmp_table_name, mode ='w') as f:
-        write = csv.DictWriter(f, fildnames=CLIENT_SCHEMA)
+        write = csv.DictWriter(f, fieldnames = CLIENT_SCHEMA)
         write.writerows(clients)
 
         os.remove(CLIENT_TABLE)

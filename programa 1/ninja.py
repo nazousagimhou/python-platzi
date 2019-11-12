@@ -1,23 +1,13 @@
-#my_var = 1
-#my_var = (my_var + 1)**3/8
+# def suma(*args):
+#     resultado = 0
+#     print(args)
+#     for valor in args:
+#         resultado = resultado + valor
+#     return resultado
+#
+# print(suma(1, 2, 3, 4, 5))  # HASTA MAS ARGUMENTOS SI GUSTAS
 
-#print (my_var)
+def suma(**kwargs):
+	print(kwargs['name'])
 
-#def cerradura(x,y):
-#	return x + y
-
-#print (cerradura(8,5))
-#print (type(cerradura))
-
-#x = 1
-#y = 3
-#a = 5
-#b = 7
-
-#if x >= y :
-#	print('x es menor que y')
-#else :
-#	print('x no es menor que y')
-
-
-10//4
+suma(name = 'Eduardo', z = 20 , x=2.0) #HASTA MAS ARGUMENTOS SI GUSTAS
