@@ -1,20 +1,14 @@
-import turtle
+class Tortuga:
 
-window = turtle.Screen()
-tortuga = turtle.Turtle()
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-tortuga.forward(100) 
-tortuga.rigth(90) #es para dar el angulo
+    def say_hello(self):
+        print('Hello, I am the turtle {} and I am {} years old'.format(self.name, self.age))
 
-window.mainloop() #para visualizar esta linea 
+if __name__ == '__main__':
+    pet = Tortuga('Edison', 6)
 
-
-#color('red','yellow')
-##begin_fill()
-#while Turtle:
-#	forward(200)
-#	left(170)
-#	if abs(pos()) < 1:
-#		break
-#end_fill()
-#done()
+    print('Age: {}'.format(pet.age))
+    pet.say_hello()
