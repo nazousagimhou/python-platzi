@@ -25,8 +25,8 @@ class ClientService:
 
         updated_clients = []
         for client in clients:
-            if client['uid'] == updated_clients.uid:
-                update_clients.append(updated_client.to_dict())
+            if client['uid'] == update_client.uid:
+                updated_clients.append(update_client.to_dict())
             else:
                 updated_clients.append(client)
 
